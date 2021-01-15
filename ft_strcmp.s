@@ -5,10 +5,14 @@ global _ft_strcmp
 _ft_strcmp:
 	mov		al, BYTE [rdi]	; Move first byte of rdi in al
 	mov		bl, BYTE [rsi]	; Move first byte of rsi in bl
+
+empty_string:
 	cmp		al, 0			; Compare if al == eos
 	je		exit			; Exit
 	cmp		bl, 0			; Compare if al == eos
 	je		exit			; Exit
+
+compare_string:
 	cmp		al, bl			; Compare strings al and bl
 	jne		exit			; If not equal exit
 	inc		rdi				; Increment rdi
