@@ -1,7 +1,9 @@
 NAME	= libasm
 LIB		= libasm.a
 
-SRCS	= ./ft_strlen.s
+SRCS	= ./ft_strlen.s \
+		  ./ft_strcmp.s
+			
 
 NASM	= nasm
 NFLAGS	= -f macho64
@@ -20,10 +22,13 @@ OBJ		= $(SRCS:.s=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(LIB) $(OBJ)
+	@ar rcs $(LIB) $(OBJ)
 
-cc: 
-	$(CC) $(CFLAGS) main.c $(LIB)
+cc:
+	@$(CC) $(CFLAGS) main.c $(LIB)
+
+test: all cc
+	@./a.out
 
 clean:
 	$(RM) $(OBJ)
