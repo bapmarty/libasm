@@ -1,7 +1,7 @@
 NAME	= libasm
 LIB		= libasm.a
 
-SRCS	=
+SRCS	= ./ft_strlen.s
 
 NASM	= nasm
 NFLAGS	= -f macho64
@@ -22,12 +22,16 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(LIB) $(OBJ)
 
+cc: 
+	$(CC) $(CFLAGS) main.c $(LIB)
+
 clean:
 	$(RM) $(OBJ)
 
-fclean:
+fclean: clean
+	$(RM) $(LIB)
+	$(RM) ./a.out
 
-re:
-
+re: fclean all
 
 .PHONY: all clean fclean re
