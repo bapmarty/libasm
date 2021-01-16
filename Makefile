@@ -1,10 +1,10 @@
 NAME	= libasm
 LIB		= libasm.a
 
-SRCS	= ./ft_strlen.s \
-		  ./ft_strcmp.s
+SRCS	= ./ft_strlen.s	\
+		  ./ft_strcmp.s	\
+		  ./ft_write.s	\
 			
-
 NASM	= nasm
 NFLAGS	= -f macho64
 
@@ -28,7 +28,7 @@ cc:
 	@$(CC) $(CFLAGS) main.c $(LIB)
 
 test: all cc
-	@./a.out
+	@./a.out | cat -e
 
 clean:
 	$(RM) $(OBJ)
