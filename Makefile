@@ -3,6 +3,7 @@ LIB		= libasm.a
 
 SRCS	= ./ft_strlen.s	\
 		  ./ft_strcmp.s	\
+		  ./ft_strcpy.s	\
 		  ./ft_write.s	\
 			
 NASM	= nasm
@@ -25,9 +26,11 @@ $(NAME): $(OBJ)
 	@ar rcs $(LIB) $(OBJ)
 
 cc:
+	@echo "Compiling..."
 	@$(CC) $(CFLAGS) main.c $(LIB)
 
-test: all cc
+test: fclean all cc
+	@echo "Execute..."
 	@./a.out | cat -e
 
 clean:
