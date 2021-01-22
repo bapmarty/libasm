@@ -34,16 +34,14 @@ void	check_ft_write() {
 	printf("[WRITE] return: %zd\n", write(2, "Hello world\n", 12));
 	printf("[FT_WRITE] return: %zd\n", ft_write(2, "Hello world\n", 12));
 }
-int		main() {
-	check_ft_strlen();
-	check_ft_strcmp();
-	check_ft_write();
+
+void	check_ft_strcpy() {
 
 	char s1[] = "bonjour les amis";
 	char s2[] = "World";
 	char s1b[] = "Hello world";
 	char s2b[] = "World";
-
+	
 	printf("==========================================\n");
 	printf("============== [ft_strcpy] ===============\n");
 	printf("==========================================\n");
@@ -51,5 +49,23 @@ int		main() {
 	printf("%s\n", s1);
 	printf("[STRCPY] s1: [%s], s2: [%s], return: %s\n", s1, s2, strcpy(s1, s2));
 	printf("[FT_STRCPY] s1b: [%s], s2b: [%s], return: %s\n", s1b, s2b, ft_strcpy(s1b, s2b));
+}
+
+int		main() {
+	check_ft_strlen();
+	check_ft_strcmp();
+	check_ft_write();
+	check_ft_strcpy();
+
+	char s1[] = "bonjour les amis";
+	char s1b[] = "bonjour les amis";
+
+	printf("==========================================\n");
+	printf("============== [ft_strdup] ===============\n");
+	printf("==========================================\n");
+	printf("[TEST 1]:\n");
+	printf("[STRDUP] s1: [%s], return: %s\n", s1, strdup(s1));
+	printf("[FT_STRDUP] s1b: [%s], return: %s\n", s1b, ft_strdup(s1b));
+
 	return (0);
 }
