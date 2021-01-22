@@ -31,12 +31,25 @@ void	check_ft_write() {
 	printf("=============== [ft_write] ===============\n");
 	printf("==========================================\n");
 	printf("[TEST 1]:\n");
-	write(1, "[WRITE] s = Hello world\n", 24);
-	ft_write(1, "[FT_WRITE] s = Hello world\n", 27);
+	printf("[WRITE] return: %zd\n", write(2, "Hello world\n", 12));
+	printf("[FT_WRITE] return: %zd\n", ft_write(2, "Hello world\n", 12));
 }
 int		main() {
 	check_ft_strlen();
 	check_ft_strcmp();
 	check_ft_write();
+
+	char s1[] = "bonjour les amis";
+	char s2[] = "World";
+	char s1b[] = "Hello world";
+	char s2b[] = "World";
+
+	printf("==========================================\n");
+	printf("============== [ft_strcpy] ===============\n");
+	printf("==========================================\n");
+	printf("[TEST 1]:\n");
+	printf("%s\n", s1);
+	printf("[STRCPY] s1: [%s], s2: [%s], return: %s\n", s1, s2, strcpy(s1, s2));
+	printf("[FT_STRCPY] s1b: [%s], s2b: [%s], return: %s\n", s1b, s2b, ft_strcpy(s1b, s2b));
 	return (0);
 }
