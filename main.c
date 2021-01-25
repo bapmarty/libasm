@@ -3,7 +3,7 @@
 void	check_ft_strlen() {
 	printf("==========================================\n");
 	printf("============== [ft_strlen] ===============\n");
-	printf("==========================================\n");
+	printf("==========================================\n\n");
 	printf("[TEST 1]:\n");
 	printf("[STRLEN] s = %zd\n", strlen("Hello world"));
 	printf("[FT_STRLEN] s = %zd\n", ft_strlen("Hello world"));
@@ -20,7 +20,7 @@ void	check_ft_strlen() {
 void	check_ft_strcmp() {
 	printf("==========================================\n");
 	printf("============== [ft_strcmp] ===============\n");
-	printf("==========================================\n");
+	printf("==========================================\n\n");
 	printf("[TEST 1]:\n");
 	printf("[STRCMP] s = %d\n", strcmp("Hello world", "Hello word"));
 	printf("[FT_STRCMP] s = %d\n", ft_strcmp("Hello world", "Hello word"));
@@ -29,7 +29,7 @@ void	check_ft_strcmp() {
 void	check_ft_write() {
 	printf("==========================================\n");
 	printf("=============== [ft_write] ===============\n");
-	printf("==========================================\n");
+	printf("==========================================\n\n");
 	printf("[TEST 1]:\n");
 	printf("[WRITE] return: %zd\n", write(2, "Hello world\n", 12));
 	printf("[FT_WRITE] return: %zd\n", ft_write(2, "Hello world\n", 12));
@@ -44,7 +44,7 @@ void	check_ft_strcpy() {
 	
 	printf("==========================================\n");
 	printf("============== [ft_strcpy] ===============\n");
-	printf("==========================================\n");
+	printf("==========================================\n\n");
 	printf("[TEST 1]:\n");
 	printf("%s\n", s1);
 	printf("[STRCPY] s1: [%s], s2: [%s], return: %s\n", s1, s2, strcpy(s1, s2));
@@ -74,9 +74,9 @@ int		main() {
 
 	printf("Bonjour\n");
 	fd = open("./ft_read.s", O_RDONLY);
-	printf("============================================\n");
-	printf("================= Ft_read ==================\n");
-	printf("============================================\n\n");
+	printf("==========================================\n");
+	printf("=============== [ft_read] ================\n");
+	printf("==========================================\n\n");
 	ret_read = ft_read(fd, buf, 42);
 	buf[ret_read] = '\0';
 	printf("|%s|\nreturn : [%zd]\n", buf, ret_read);
