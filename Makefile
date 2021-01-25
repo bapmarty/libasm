@@ -5,7 +5,8 @@ SRCS	= ./ft_strlen.s	\
 		  ./ft_strcmp.s	\
 		  ./ft_strcpy.s	\
 		  ./ft_strdup.s	\
-		  ./ft_write.s
+		  ./ft_write.s	\
+		  ./ft_read.s
 			
 NASM	= nasm
 NFLAGS	= -f macho64
@@ -26,7 +27,7 @@ ERASE           = $(ECHO) $(ES_ERASE)
 OBJ		= $(SRCS:.s=.o)
 
 %.o : %.s
-	@$(NASM) $(NFLAGS) $< -o $@
+	$(NASM) $(NFLAGS) $< -o $@
 
 all: $(NAME)
 

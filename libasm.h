@@ -9,6 +9,7 @@
 
 ssize_t		ft_strlen(const char *s);
 ssize_t		ft_write(int fildes, const char *buf, size_t nbyte);
+ssize_t		ft_read(int fildes, const char *buf, size_t nbyte);
 
 int			ft_strcmp(const char *s1, const char *s2);
 
