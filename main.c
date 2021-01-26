@@ -6,15 +6,13 @@ void	check_ft_strlen() {
 	printf("==========================================\n\n");
 	printf("[TEST 1]:\n");
 	printf("[STRLEN] s = %zd\n", strlen("Hello world"));
-	printf("[FT_STRLEN] s = %zd\n", ft_strlen("Hello world"));
-	printf("------------------------------------------\n");
+	printf("[FT_STRLEN] s = %zd\n\n", ft_strlen("Hello world"));
 	printf("[TEST 2]:\n");
 	printf("[STRLEN] s = %zd\n", strlen("Hello I'm a french developper and student at 42"));
-	printf("[FT_STRLEN] s = %zd\n", ft_strlen("Hello I'm a french developper and student at 42"));
-	printf("------------------------------------------\n");
+	printf("[FT_STRLEN] s = %zd\n\n", ft_strlen("Hello I'm a french developper and student at 42"));
 	printf("[TEST 3]:\n");
 	printf("[STRLEN] s = %zd\n", strlen(""));
-	printf("[FT_STRLEN] s = %zd\n", ft_strlen(""));
+	printf("[FT_STRLEN] s = %zd\n\n", ft_strlen(""));
 }
 
 void	check_ft_strcmp() {
@@ -23,7 +21,13 @@ void	check_ft_strcmp() {
 	printf("==========================================\n\n");
 	printf("[TEST 1]:\n");
 	printf("[STRCMP] s = %d\n", strcmp("Hello world", "Hello word"));
-	printf("[FT_STRCMP] s = %d\n", ft_strcmp("Hello world", "Hello word"));
+	printf("[FT_STRCMP] s = %d\n\n", ft_strcmp("Hello world", "Hello word"));
+	printf("[TEST 2]:\n");
+	printf("[STRCMP] s = %d\n", strcmp("", "Hello world"));
+	printf("[FT_STRCMP] s = %d\n\n", ft_strcmp("", "Hello world"));
+	printf("[TEST 3]:\n");
+	printf("[STRCMP] s = %d\n", strcmp("Hello world", "Hello world"));
+	printf("[FT_STRCMP] s = %d\n\n", ft_strcmp("Hello world", "Hello world"));
 }
 
 void	check_ft_write() {
@@ -51,23 +55,7 @@ void	check_ft_strcpy() {
 	printf("[FT_STRCPY] s1b: [%s], s2b: [%s], return: %s\n", s1b, s2b, ft_strcpy(s1b, s2b));
 }
 
-int		main() {
-	check_ft_strlen();
-	check_ft_strcmp();
-	check_ft_write();
-	check_ft_strcpy();
-
-	//char s1[] = "bonjour les amis";
-	//char s1b[] = "bonjour les amis";
-
-//	printf("==========================================\n");
-//	printf("============== [ft_strdup] ===============\n");
-//	printf("==========================================\n");
-//	printf("[TEST 1]:\n");
-//	printf("[STRDUP] s1: [%s], return: %s\n", s1, strdup(s1));
-	//printf("[FT_STRDUP] s1b: [%s], return: %s\n", s1b, ft_strdup(s1b));
-
-
+void	check_ft_read() {
 	ssize_t		ret_read;
 	int			fd;	
 	char		buf[5000];
@@ -86,5 +74,25 @@ int		main() {
 	buf[ret_read] = '\0';
 	printf("|%s|\nreturn : [%zd]\n\n", buf, ret_read);
 	close(fd);
+}
+
+int		main() {
+	check_ft_write();
+	check_ft_read();
+	check_ft_strlen();
+	check_ft_strcmp();
+	check_ft_strcpy();
+
+	//char s1[] = "bonjour les amis";
+	//char s1b[] = "bonjour les amis";
+
+//	printf("==========================================\n");
+//	printf("============== [ft_strdup] ===============\n");
+//	printf("==========================================\n");
+//	printf("[TEST 1]:\n");
+//	printf("[STRDUP] s1: [%s], return: %s\n", s1, strdup(s1));
+	//printf("[FT_STRDUP] s1b: [%s], return: %s\n", s1b, ft_strdup(s1b));
+
+	printf("\n==========================================\n\n");
 	return (0);
 }
