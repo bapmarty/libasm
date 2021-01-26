@@ -42,7 +42,7 @@ cc:
 
 test: fclean all cc
 	@$(ECHO) "Execute...\t[$(C_PENDING) ⌛︎ $(C_RESET)]"
-	@./a.out | cat -e
+	@./a.out
 	@$(ERASE)
 	@$(ECHO) "Execute...\t[$(C_SUCCESS) ✅ $(C_RESET)]"
 
