@@ -43,7 +43,7 @@ void	check_ft_strcpy() {
 
 	char s1[] = "bonjour les amis";
 	char s2[] = "World";
-	char s1b[] = "Hello world";
+	char *s1b = malloc(sizeof(char) * 6);
 	char s2b[] = "World";
 	
 	printf("==========================================\n");
@@ -67,7 +67,7 @@ void	check_ft_read() {
 	printf("==========================================\n\n");
 	ret_read = ft_read(fd, buf, 42);
 	buf[ret_read] = '\0';
-	printf("|%s|\nreturn : [%zd]\n", buf, ret_read);
+	printf("|%s|\nreturn : [%zd]\n\n", buf, ret_read);
 	close(fd);
 	fd = open("./ft_read.s", O_RDONLY);
 	ret_read = read(fd, buf, 42);
@@ -83,15 +83,15 @@ int		main() {
 	check_ft_strcmp();
 	check_ft_strcpy();
 
-	//char s1[] = "bonjour les amis";
-	//char s1b[] = "bonjour les amis";
+	char s1[] = "bonjour les amis";
+	char s1b[] = "bonjour les amis";
 
-//	printf("==========================================\n");
-//	printf("============== [ft_strdup] ===============\n");
-//	printf("==========================================\n");
-//	printf("[TEST 1]:\n");
-//	printf("[STRDUP] s1: [%s], return: %s\n", s1, strdup(s1));
-	//printf("[FT_STRDUP] s1b: [%s], return: %s\n", s1b, ft_strdup(s1b));
+	printf("==========================================\n");
+	printf("============== [ft_strdup] ===============\n");
+	printf("==========================================\n");
+	printf("[TEST 1]:\n");
+	printf("[STRDUP] s1: [%s], return: [%s]\n", s1, strdup(s1));
+	printf("[FT_STRDUP] s1b: [%s], return: [%s]\n", s1b, ft_strdup(s1b));
 
 	printf("\n==========================================\n\n");
 	return (0);
