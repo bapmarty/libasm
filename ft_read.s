@@ -1,4 +1,5 @@
-global _ft_read
+section .text
+	global _ft_read
 
 ;	ft_read(rdi = [argv[0]], rsi = [argv[1]], rdx = [argv[2]])
 

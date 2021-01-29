@@ -1,4 +1,5 @@
-global _ft_strlen
+section .text
+	global _ft_strlen
 
 ; size_t	ft_strlen(const char *s)
 

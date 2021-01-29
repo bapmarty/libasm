@@ -1,4 +1,5 @@
-global _ft_write
+section .text
+	global _ft_write
 
 ; ft_write(rdi = [argv[0]], rsi = [argv[1]], rdx = [argv[2]])
 

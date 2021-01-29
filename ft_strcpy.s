@@ -1,4 +1,5 @@
-global _ft_strcpy
+section .text
+	global _ft_strcpy
 
 ; ft_strcpy(rdi = [argv[0]], rsi = [argv[1]])
 
